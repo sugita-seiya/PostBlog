@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PostBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__title">
+         <%= link_to "Qiita", root_path, class: "header__title--text" %>
+      </div>
+
+      <%= form_with(url: posts_searches_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "キーワード入力", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+      <% end %>
+
+
+      <div class="header__right">
+        <% if user_signed_in?%>
+          <%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>
+          <%= link_to new_post_path, class:"header__right--btn" do%>
+            <i class="fas fa-quidditch "></i>新規投稿
+          <% end %>
+          <%= link_to "ログアウト", destroy_user_session_path, class:"header__right--btn"%>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class: "header__right--btn"%>
+          <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>
+        <% end %>
+      </div>
+
+    </header>
+    <div class="contents">
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
+
+

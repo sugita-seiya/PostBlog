@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
 
 
   def set_search
-    #@search = Article.search(params[:q])
-    @search = Post.ransack(params[:keyword])#ransackメソッド推奨
+    @search = Post.ransack(params[:keyword])
     @search_products = @search.result
   end
 end

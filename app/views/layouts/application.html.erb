@@ -16,7 +16,7 @@
       </div>
 
       <%= form_with(url: posts_searches_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "キーワード入力", class: "search-input" %>
+        <%= form.text_field :keyword, placeholder: "タイトル検索", class: "search-input" %>
         <%= form.submit "検索", class: "search-btn" %>
       <% end %>
 
@@ -27,7 +27,7 @@
           <%= link_to new_post_path, class:"header__right--btn" do%>
             <i class="fas fa-quidditch "></i>新規投稿
           <% end %>
-          <%= link_to "ログアウト", destroy_user_session_path, class:"header__right--btn"%>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__right--btn"%>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class: "header__right--btn"%>
           <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>

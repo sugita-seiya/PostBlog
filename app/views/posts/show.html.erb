@@ -16,14 +16,16 @@
 
 
 <div class="container">
-  <% if current_user %>
-    <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
-      <%= form.text_area :text, placeholder: "コメント入力", rows: "2" %>
-      <%= form.submit "SEND" %>
+  <div class="container__form">
+    <% if current_user %>
+      <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
+        <%= form.text_area :text, placeholder: "コメント入力", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>登録してください。</p></strong>
     <% end %>
-  <% else %>
-    <strong><p>登録してください。</p></strong>
-  <% end %>
+  </div>
   <div class="comments">
     <h4>-----コメント一覧-----</h4>
     <% if @comments %>

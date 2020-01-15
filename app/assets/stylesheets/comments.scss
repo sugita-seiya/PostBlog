@@ -1,3 +1,27 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  &__form{
+    display: inline-block;
+    margin-left: 175px;
+    padding-left: 29px;
+    textarea{
+      padding-left: 32px;
+      margin-left: 84px;
+    }
+    input{
+      width: 100%;
+      margin: 5px 0 15px;
+      padding: 10px;
+      border: 1px solid #D8D8D8;
+      border-radius: 5px;
+      font-family: "游ゴシック", "YuGothic";
+    }
+  }
+  .comments{
+    padding-left: 292px;
+
+  }
+}

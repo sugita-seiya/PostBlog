@@ -19,8 +19,8 @@
   <div class="container__form">
     <% if current_user %>
       <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
-        <%= form.text_area :text, placeholder: "コメント入力", rows: "2" %>
-        <%= form.submit "SEND" %>
+        <%= form.text_area :text, placeholder: "コメント入力", rows: "2" , class: "textbox" %>
+        <%= form.submit "SEND" , class: "form__submit"%>
       <% end %>
     <% else %>
       <strong><p>登録してください。</p></strong>

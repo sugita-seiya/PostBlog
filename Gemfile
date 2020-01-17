@@ -62,7 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "font-awesome-sass"
 gem 'devise'
-gem 'pry-rails'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'pry-rails'

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  root to: "top#index"
   devise_for :users
-  root to: "posts#index"
   namespace :posts do
     resources :searches, only: :index
   end
-  resources :posts, except: :index do
+  resources :posts do
     resources :comments, only: :create
   end
   resources :users, only: :show

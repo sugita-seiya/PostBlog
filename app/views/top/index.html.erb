@@ -1,0 +1,51 @@
+<div class="lesson-wrapper">
+  <div class="container">
+    <div class="heading">
+      <h2>記事を読んでQiitaに投稿してみよう。</h2>
+    </div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-icon">
+          <a class="btn" href="https://qiita.com/search?utf8=%E2%9C%93&sort=&q=HTML+%26CSS"><span>HTML & CSS</span><span>Click</span></a>
+        </div>
+        <p class="text-contents">ウェブページの作成に使用される言語。<br>HTMLとCSSを組み合わせることで、静的なページを作り上げる事が出来る。</p>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-icon">
+          <a class="btn" href="https://qiita.com/search?q=ruby"><span>Ruby</span><span>Click</span></a>
+        </div>
+        <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えている。<br>大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-icon">
+          <a class="btn" href="https://qiita.com/search?q=rails"><span>Ruby on Rails</span><span>Click</span></a>
+        </div>
+        <p class="text-contents">Ruby on RailsとはRubyのフレームワーク。<br> 応用範囲が広く万能なフレームワーク</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-icon">
+          <a class="btn" href="https://qiita.com/search?utf8=%E2%9C%93&sort=&q=jquery"><span>jQuery</span><span>Click</span></a>
+        </div>
+        <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。<br> アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
+      </div>
+    </div>
+  </div>
+  <div class="message-wrapper">
+    <div class="container">
+      <div class="heading">
+        <h2>さぁ、あなたもQiitaでプログラミングを学習しましょう！！！</h2>
+        <h2>Yes We Can. Yes We Did.!!!</h2>
+      </div>
+    </div>
+    <% if user_signed_in? %>
+      <%= link_to posts_path, class: "login__btn" do%>
+        投稿一覧ページへ戻る
+      <% end %>
+    <% else %>
+      <%= link_to user_session_path, class: "login__btn" do%>
+       さっそくログインする
+      <% end %>
+    <% end %>
+  </div>
+</div>

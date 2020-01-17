@@ -12,7 +12,13 @@
   <body>
     <header class="header">
       <div class="header__title">
-         <%= link_to "Qiita", root_path, class: "header__title--text" %>
+         <%= link_to "Qiita", posts_path, class: "header__title--text" %>
+      </div>
+
+      <div class= "header__top">
+        <div class= "header__top--logo">
+          <%= link_to "ホーム", "/" %>
+        </div>
       </div>
 
       <%= form_with(url: posts_searches_path, local: true, method: :get, class: "search-form") do |form| %>
@@ -38,5 +44,19 @@
     <div class="contents">
       <%= yield %>
     </div>
+    <footer>
+      <div class="content">
+        <div class = "st-Footer_start">
+          <div class="st-Footer_start_logo">Qiita</div>
+          <div class="footer-list">
+            <ul>
+              <li>会社概要</li>
+              <li>採用</li>
+              <li>お問い合わせ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

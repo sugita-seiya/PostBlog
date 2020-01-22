@@ -42,6 +42,10 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: "投稿内容を削除しました"
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :content).merge(user_id: current_user.id)

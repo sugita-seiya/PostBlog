@@ -89,6 +89,8 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
+    faker (2.10.1)
+      i18n (>= 1.6, < 2)
     ffi (1.11.3)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
@@ -150,6 +152,10 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.2.4.1)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.4)
+      actionpack (>= 5.0.1.x)
+      actionview (>= 5.0.1.x)
+      activesupport (>= 5.0.1.x)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -257,6 +263,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   factory_bot_rails
+  faker (~> 2.8)
   font-awesome-sass
   jbuilder (~> 2.5)
   jquery-rails
@@ -265,6 +272,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.1)
+  rails-controller-testing
   rails-i18n
   ransack
   rspec-rails

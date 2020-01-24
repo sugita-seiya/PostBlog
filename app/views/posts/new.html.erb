@@ -4,7 +4,7 @@
 
 <%= form_with model: @post, class: :form, local: true do |form| %>
   <%= render 'layouts/error_messages', model: form.object %>
-  <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
-  <%= form.text_area :content, placeholder: :ブログ本文, class: :form__text %>
+  <%= form.text_field :title, placeholder: :タイトル, class: :form__title, id:"title" %>
+  <%= form.text_area :content, placeholder: :ブログ本文, class: :form__text , content__titles: "10", id: "content" %>
   <%= form.submit '投稿する', class: :form__btn %>
 <% end %>

@@ -36,7 +36,7 @@ describe User do
       user.valid?
       expect(user.errors[:nickname]).to include("is too long (maximum is 6 characters)")
     end
-    
+
     it "nicknameが6文字以下では登録できること" do
       user = build(:user, nickname: "aaaaaa")
       expect(:user).to be_valid
@@ -50,7 +50,15 @@ describe User do
     end
 
     it "passwordが6文字以上であれば登録できること" do
-      
+      user = build(:user, password:"111111", password_confirmation:"111111")
+      user.valid?
+      expect(:user).to be_valid
+    end
+
+    it "passwordが5文字以下であれば登録できないこと" do
+      user = build(:user, password:"11111",password_confirmation:"11111")
+      user.valid?
+      expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
     end
   end
 end

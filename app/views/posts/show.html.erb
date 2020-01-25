@@ -26,11 +26,11 @@
       <strong><p>登録してください。</p></strong>
     <% end %>
   </div>
-  <div class="comments">
+  <div class="comments" id="comments">
     <h4>-----コメント一覧-----</h4>
     <% if @comments %>
       <% @comments.each do |comment| %>
-        <p class="comment" data-id=<%= comment.id %>>
+        <p class="comment" data-comment-id=<%= comment.id %>>
           <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></strong>
           <%= comment.text %>
         </p>

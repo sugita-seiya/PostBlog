@@ -1,9 +1,9 @@
 $(function(){
   function buildHTML(comment){
-    var html = `<p class="comment" data-id="${comment.id}">
+    var html = `<p class="comment" data-comment-id="${comment.id}">
                   <strong>
                     <a href=/users/${comment.user_id}>${comment.user_name}</a>
-                    ：
+
                   </strong>
                   ${comment.text}
                 </p>`
@@ -37,10 +37,11 @@ $(function(){
   var reloadComments = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_comment_id = $('.comment:last').data("comment-id");
-    console.log(last_comment_id)
+    var url = window.location.pathname;
+    var post_id = url.match(/\d+/);
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
-      url: "api/comment",
+      url: post_id+"/api/comments",
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
@@ -48,7 +49,9 @@ $(function(){
       data: {id: last_comment_id}
     })
     .done(function(comments) {
+      console.log("新規コメントなし");
       if (comments.length !== 0) {
+        console.log("新規コメントあり");
         //追加するHTMLの入れ物を作る
         var insertHTML = '';
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
@@ -58,8 +61,7 @@ $(function(){
         //メッセージが入ったHTMLに、入れ物ごと追加
         $('.comments').append(insertHTML);
         $('.comments').animate({ scrollTop: $('.comments')[0]});
-        $(".textbox")[0].reset();
-        $(".form__submit").prop("disabled", false);
+        $(".textbox").val("");
       }
     })
     .fail(function() {

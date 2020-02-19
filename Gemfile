@@ -42,6 +42,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
+
+  gem 'sqlite3' 
 end
 
 group :development do
@@ -55,6 +57,8 @@ end
 
 group :production do
   gem 'unicorn', '5.4.1'
+
+  gem 'pg'
 end
 
 group :test do

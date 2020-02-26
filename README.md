@@ -3,7 +3,8 @@
 https://powerful-mountain-68781.herokuapp.com
 
 ## Description
-トップページにQiitaのリンが設定されているので、そこで勉強した事をブログにアップするサイト。
+Qiitaのクローンサイトを作成。
+いつもQiitaを使っていてトップページが最新の記事になっていて使いにくさを感じていたので,トップページを改良したアプリを作成。
 
 ## Features
 - haml/SASS記法と、命名規則BEMを使ったマークアップ

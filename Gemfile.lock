@@ -75,6 +75,9 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
+    debase (0.2.4.1)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.9)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -128,7 +131,7 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    pg (1.2.2)
+    pg (1.2.3)
     polyamorous (2.3.2)
       activerecord (>= 5.2.1)
     pry (0.12.2)
@@ -203,6 +206,8 @@ GEM
       rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
+    ruby-debug-ide (0.7.0)
+      rake (>= 0.8.1)
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
     sass (3.7.4)
@@ -268,6 +273,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  debase
   devise
   factory_bot_rails
   faker (~> 2.8)
@@ -284,6 +290,7 @@ DEPENDENCIES
   rails-i18n
   ransack
   rspec-rails
+  ruby-debug-ide
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

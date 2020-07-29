@@ -15,6 +15,7 @@ class PostsController < ApplicationController
       redirect_to posts_path, notice: '投稿が送信されました'
     else
       render :new
+      
     end
   end
 

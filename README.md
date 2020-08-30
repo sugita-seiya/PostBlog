@@ -53,3 +53,7 @@ Qiitaのクローンサイトを作成。
 ### Association
 - belongs_to :user
 - belongs_to :post
+
+
+
+
